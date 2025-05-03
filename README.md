@@ -1,5 +1,7 @@
 # 🧠✨ Introducing React-Statelet
 
+Checkout https://www.npmjs.com/package/react-statelet
+
 A lightweight state management tool for React that sits perfectly between simplicity and power.
 
 ---
