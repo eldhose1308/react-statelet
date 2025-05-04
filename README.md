@@ -66,7 +66,7 @@ Create a store with just a reducer and initial state.
 No provider nesting or complex setup.
 
 ```js
-const status = useStatelet(state => state.status);
+const isLoading = useStatelet(state => state.loading);
 ```
 
 ## ⚡  2. Fine-Grained Reactivity via Selectors
@@ -74,8 +74,10 @@ Efficient state subscription using `useSyncExternalStore` and selectors
 means components only re-render when the selected part of the state changes.
 
 ```js
-const isLoading = useStatelet(state => state.loading);
+const status = useStatelet(state => state.status);
 ```
+
+![status-toggle-selector](assets/IMG_3024.GIF)
 
 ## 🚀 3. Easy Dispatch Functions
 Create action dispatchers on the fly with `useCreateStateletAction`:
@@ -84,6 +86,7 @@ Create action dispatchers on the fly with `useCreateStateletAction`:
 const increment = useCreateStateletAction('INCREMENT');
 increment();
 ```
+![easy-dispatching](assets/IMG_3026.GIF)
 
 ## 💾 4. Persistent State Support
 Preserve state across reloads using `localStorage` and a flexible whitelist:
@@ -91,14 +94,20 @@ Preserve state across reloads using `localStorage` and a flexible whitelist:
 ```js
 persistConfig: {
   key: "appState",
-  whitelist: ["user", "theme"]
+  whitelist: ["todos", "theme"]
 }
 ```
+
+![persist-storage](assets/IMG_3025.GIF)
+
 Statelet restores only what you care about, automatically.
 
 ## 🧱 5. Composable and Scalable
 You can define multiple stores or slice reducers and mount them under a unified store,
 giving you modularity if you need it later.
+
+![scalabale](assets/IMG_3027.GIF)
+The form being in a sub store context and only the selectors using these states will re-render
 
 # 🧪 Try It Out
 Lightweight, reactive, and just the right amount of structured.
